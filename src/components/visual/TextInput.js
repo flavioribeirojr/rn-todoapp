@@ -17,11 +17,9 @@ class MyTextInput extends Component {
 const styles = StyleSheet.create({
   input: {
     backgroundColor: 'white',
-    // width: 300,
     paddingHorizontal: 2,
     borderRadius: 2,
-    borderWidth: 0.6,
-    borderColor: '#40739e'
+    elevation: 2
   }
 })
 

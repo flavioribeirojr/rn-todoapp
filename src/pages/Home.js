@@ -11,7 +11,7 @@ class Home extends Component {
     const { navigate } = this.props.navigation
 
     return (
-      <Wrapper>
+      <Wrapper style={{ justifyContent: 'space-between', paddingVertical: 160 }}>
         <Image
           style={styles.gengar}
           source={require('@/assets/img/gengar.gif')}

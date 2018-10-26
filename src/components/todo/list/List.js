@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import ToDoItem from '@/components/todo/item/Item'
 import { FlatList, View, StyleSheet, Image } from 'react-native'
-import { Wrapper, TextInput, Text } from '@/components/visual'
+import { Wrapper, TextInput, Text, Spinner, Animator } from '@/components/visual'
 
 class List extends Component {
   static navigationOptions = {
@@ -25,8 +25,8 @@ class List extends Component {
   addTodo () {
     this.setState({
       list: [
-        ...this.state.list,
-        this.state.currentItem
+        this.state.currentItem,
+        ...this.state.list
       ]
     })
 
@@ -47,7 +47,7 @@ class List extends Component {
           <Wrapper style={styles.screenFinal}>
             <Text style={styles.listName}>{ this.state.name }</Text>
             <Image
-              style={{ height: 130, width: 130, resizeMode: 'contain' }}
+              style={{ resizeMode: 'contain', width: 200, height: 130 }}
               source={require('@/assets/img/squirtle.gif')}
             />
             <TextInput
@@ -121,8 +121,8 @@ const styles = StyleSheet.create({
     margin: 10,
     backgroundColor: 'white',
     borderRadius: 2,
-    borderWidth: 0.5,
-    borderColor: '#40739e'
+    elevation: 1,
+    maxHeight: 380
   }
 })
 
